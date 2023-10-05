@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.listfragment.databinding.FragmentMyListBinding
 
 class MyListFragment : Fragment() {
@@ -32,7 +33,7 @@ class MyListFragment : Fragment() {
         imageList.addAll(listOf(R.drawable.ukraine, R.drawable.germany,R.drawable.japan,
             R.drawable.netherlands, R.drawable.france, R.drawable.denmark, R.drawable.italy))
 
-
+        myListBinding.list.layoutManager = LinearLayoutManager(context)
         val arrayAdapter = context?.let {
             CountriesAdapter(citiesList, countriesList, imageList, it)
         }
